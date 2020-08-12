@@ -1,0 +1,19 @@
+---
+# File: playbooks/getinstances.yml
+- name: Get instance
+  hosts: localhost
+  tasks:
+  - name: Get instance info
+    os_server_info:
+      auth:
+        auth_url: http://asgard.es.datio:15000
+        username: "{{ AuthUserName }}"
+        password: "{{ AuthPassword }}"
+        project_name: "{{ TenantName }}"
+      validate_certs: False
+      server: node*
+      filters:
+        vm_state: active
+    register: result
+  - debug:
+       msg: "{{ result.openstack_servers }}"                                        

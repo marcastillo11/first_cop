@@ -1,0 +1,20 @@
+---
+# File: playbooks/getinstances.yml
+- name: Get instance
+  hosts: localhost
+  tasks:
+  - name: Get instance info
+    os_server_info:
+      auth:
+        auth_url: http://asgard.es.datio:15000
+        username: "mlcastillo"
+        password: "datio2017"
+        project_name: "cop-ansible"
+      validate_certs: False
+      server: web*
+      filters:
+        vm_state: active
+  register: result
+      
+  
+     

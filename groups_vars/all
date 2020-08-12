@@ -1,0 +1,13 @@
+---
+# File: group_vars/all
+
+# Authentication
+AuthUserName: mlcastillo
+AuthPassword: datio2017
+TenantName: cop-ansible
+
+# VM info
+ImageName: RHEL7.5 
+FlavorName: d1.medium
+NetworkName: cop_network
+Subnet_Name: cop_subnet
