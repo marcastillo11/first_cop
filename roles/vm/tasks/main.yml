@@ -3,4 +3,12 @@
 - name: create
   import_tasks: createinstance.yml
   tags:
-    - createvm 
+    - createvm
+
+
+
+- name: showip
+  import_tasks: showip.yml
+  tags:
+    - getinfovm
+ 
