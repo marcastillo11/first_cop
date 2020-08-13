@@ -1,0 +1,17 @@
+---
+
+# Authentication
+auth_url: http://asgard.es.datio:15000/v3/
+auth_username: mlcastillo
+auth_password: datio2017
+tenant_name: cop-ansible
+instance_name: mar_castillo
+
+# VM info
+image_name: RHEL7.5 
+flavor_name: d1.medium
+network_name: cop_network
+subnet_name: cop_subnet
+security_group: default
+infra_key: mar
+

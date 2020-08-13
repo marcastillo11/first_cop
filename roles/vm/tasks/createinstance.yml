@@ -1,0 +1,18 @@
+---
+
+  - name: Crenado VM
+    os_server:
+      auth:
+        auth_url: "{{ auth_url  }}"
+        username: "{{ auth_username }}"
+        password: "{{ auth_password  }}"
+        project_name: "{{ tenant_name }}"
+      state: present
+      validate_certs: False
+      name: "{{ instance_name }}"
+      key_name: "{{ infra_key  }}"
+      image: "{{ image_name }}"
+      timeout: 200
+      flavor:   "{{ flavor_name }}"
+      network: "{{ network_name }}"
+      auto_ip: yes

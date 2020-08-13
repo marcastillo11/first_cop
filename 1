@@ -1,20 +1,19 @@
----
-# File: playbooks/getinstances.yml
-- name: Get instance
+- name: Crear instancia 
   hosts: localhost
-  tasks:
-  - name: Get instance info
-    os_server_info:
+  tasks: 
+  - name: Crear VM
+    os_server:
       auth:
-        auth_url: http://asgard.es.datio:15000
-        username: "mlcastillo"
-        password: "datio2017"
-        project_name: "cop-ansible"
+        auth_url: "{{ AuthUrl }}"
+        username: "{{ AuthUserName }}"
+        password: "{{ AuthPassword }}"
+        project_name: "{{ TenantName }}"
+      state: present
       validate_certs: False
-      server: web*
-      filters:
-        vm_state: active
-  register: result
-      
-  
-     
+      name: "mar_cop"
+      key_name:
+      image: "{{ ImageName }}"
+      timeout: 200
+      flavor:   "{{ FlavorName }}"
+      network: "{{ NetworkName }}"
+      auto_ip: yes
