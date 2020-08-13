@@ -10,4 +10,5 @@ TenantName: cop-ansible
 ImageName: RHEL7.5 
 FlavorName: d1.medium
 NetworkName: cop_network
-Subnet_Name: cop_subnet
+SubnetName: cop_subnet
+InfraKey: /

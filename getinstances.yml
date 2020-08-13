@@ -11,9 +11,9 @@
         password: "{{ AuthPassword }}"
         project_name: "{{ TenantName }}"
       validate_certs: False
-      server: node*
+      server: mar*
       filters:
         vm_state: active
     register: result
   - debug:
-       msg: "{{ result.openstack_servers }}"                                        
+       msg: "{{ result.openstack_images }}"                                        
